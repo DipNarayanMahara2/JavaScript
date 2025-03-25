@@ -141,7 +141,7 @@ for (let i = 0; i < fruits.length; i++) {
 
 ## Exercises :
 
-1️⃣ Write a function that takes two numbers and returns their sum.
-2️⃣ Create a function that checks if a number is even or odd.
-3️⃣ Write a function that takes a name and age, and prints a greeting like: "Hello, Dip! You are 21 years old.
-4️⃣ Write an arrow function that multiplies three numbers.
+- 1️⃣ Write a function that takes two numbers and returns their sum.
+- 2️⃣ Create a function that checks if a number is even or odd.
+- 3️⃣ Write a function that takes a name and age, and prints a greeting like: "Hello, Dip! You are 21 years old.
+- 4️⃣ Write an arrow function that multiplies three numbers.
