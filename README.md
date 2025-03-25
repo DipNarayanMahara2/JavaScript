@@ -82,3 +82,66 @@ function returnValue(a, b) {
 const mul = returnValue(12, 2); // storing the return value in mul variable
 console.log("Mul:", mul); // displaying the result
 ```
+
+## Loops
+
+- Loop is used to repeat a specific block of code to certain number of times. For Example
+- ## Types of Loops
+- There are various types of loops
+- ## 1. for Loop
+  - repeat a specific block of code untill the condition is fullfilled. For Example
+
+```javascript
+for (let i = 1; i <= 10; i++) {
+  console.log(i); // Output: Numbers 1 to 10
+}
+```
+
+- ## 2. while Loop
+
+  - Repeats as long as a condition is true. For Example
+
+  ```javascript
+  let i = 1;
+  while (i <= 10) {
+    console.log(i);
+    i++;
+  }
+  ```
+
+- ## 3. Do-While Loop
+  - Repeats code at least once, then continues as long as the condition is true. For Example
+
+```javascript
+let i = 1;
+do {
+  console.log(i);
+  i++;
+} while (i <= 10);
+```
+
+## Array
+
+- An array is an collection fo multiple values. It can store multipal values of different data types. Such as :
+
+```javascript
+const fruits = ["apple", "banana", "cherry", 10, 24];
+```
+
+## Array Looping
+
+- You can loop through arrays (a list of values) using loops. For Example
+
+```javascript
+const fruits = ["apple", "banana", "cherry"];
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]); // Output: Each fruit in the array
+}
+```
+
+## Exercises :
+
+1️⃣ Write a function that takes two numbers and returns their sum.
+2️⃣ Create a function that checks if a number is even or odd.
+3️⃣ Write a function that takes a name and age, and prints a greeting like: "Hello, Dip! You are 21 years old.
+4️⃣ Write an arrow function that multiplies three numbers.
