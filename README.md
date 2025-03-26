@@ -4,7 +4,7 @@ Learning JavaScript form Beginner to Advance
 
 # My JavaScript Learning Journey
 
-#Day 1 Introduction To JavaScript , Variable and Data Types
+#### Day 1 Introduction To JavaScript , Variable and Data Types
 
 ## 1. **What is JavaScript?**
 
@@ -43,7 +43,7 @@ Learning JavaScript form Beginner to Advance
   }
   ```
 
-#Day 2 **Loops & Function**
+## Day 2 **Loops & Function**
 
 ## 1. Functions
 
@@ -145,3 +145,191 @@ for (let i = 0; i < fruits.length; i++) {
 - 2️⃣ Create a function that checks if a number is even or odd.
 - 3️⃣ Write a function that takes a name and age, and prints a greeting like: "Hello, Dip! You are 21 years old.
 - 4️⃣ Write an arrow function that multiplies three numbers.
+
+#### Day 3 -> Array And Objects
+
+# Array (map, filter and reduce)
+
+- An array is a varibale tha can store multiple values of different data types.
+- Exapmle :
+
+```javascript
+const array = ["apple", "dip", true, 123, null];
+console.log(array);
+```
+
+```javascript
+//  Array (map, filtes .....)
+// -- An array is a variable which store multiple data in order list. An array can store multiple data of different data types.
+
+// for example ;
+
+// Create an array with multiple valuse of different data types
+const array = ["apple", "dip", true, 123, null];
+console.log(array);
+console.log(array.length);
+
+// adding new value to array at the end
+array.push("grapes");
+console.log(array);
+
+// deleting last value of an array
+array.pop();
+console.log(array);
+
+// adding new value to array at the begining
+array.unshift("grapes");
+console.log(array);
+
+// deleting the first value of an array
+array.shift();
+console.log(array);
+
+// looping through the array
+
+array.forEach((array) => {
+  console.log(array);
+});
+```
+
+# Objects :
+
+- An object is an collection of key-value pairs Which means an object has pair of properties and its value. For Example :
+
+```Javascript
+const details = {
+  // name is property(key) and "dip" is its value
+  name: "dip", //string value
+  age: 21, // number value
+  isStudent : true //boolean value
+};
+```
+
+# JavaScript Object and Array Manipulation Challenges
+
+## Introduction
+
+This repository contains a series of JavaScript exercises that focus on working with objects and arrays. The exercises cover basic object manipulation, array operations, as well as advanced methods like `.map()`, `.filter()`, `.reduce()`, and handling deeply nested objects.
+
+## Learning Objectives
+
+- Understand how to manipulate and work with objects and arrays in JavaScript.
+- Learn to use array methods such as `.map()`, `.filter()`, and `.reduce()`.
+- Work with deeply nested objects and apply various object manipulations.
+
+## Challenges Solved
+
+### 1. **Object Basics**
+
+We created an object `student` and performed various operations:
+
+- Added new properties to an object.
+- Updated properties.
+- Deleted properties.
+
+#### Code Example:
+
+```javascript
+const student = {
+  name: "Dip Narayan Mahara",
+  age: 21,
+  grade: "A+",
+};
+
+student.subject = "Math";
+student.grade = "A";
+delete student.age;
+
+console.log(student);
+```
+
+#### Here is the Advance challanges:
+
+### Challenge 1: Deeply Nested Object Manipulation
+
+## 👉 Task: Given the following object, update the zip code to "12345", delete the city property, and add a new property phone: "9876543210" inside address.
+
+```javascript
+const person = {
+  name: "John Doe",
+  age: 30,
+  address: {
+    street: "123 Main St",
+    city: "New York",
+    zip: "10001",
+  },
+};
+
+// Your Code Here
+
+console.log(person);
+```
+
+### 🔥 Challenge 2: Transform an Array of Objects using .map()
+
+## 👉 Task: Convert the given products array into an array of strings where each string follows the format:"Product: [name] costs $[price]"
+
+```javascript
+const products = [
+  { name: "Laptop", price: 1000 },
+  { name: "Phone", price: 500 },
+  { name: "Tablet", price: 300 },
+];
+
+// Your Code Here
+
+console.log(productDetails);
+```
+
+### 🔥 Challenge 3: Filter and Sort an Array
+
+## 👉 Task: From the given students array:
+
+## 1️⃣ Filter out students who scored less than 70.
+
+## 2️⃣ Sort them in descending order based on their score.
+
+```javascript
+const students = [
+  { name: "Alice", score: 85 },
+  { name: "Bob", score: 67 },
+  { name: "Charlie", score: 90 },
+  { name: "David", score: 72 },
+];
+
+// Your Code Here
+
+console.log(topStudent);
+```
+
+### 🔥 Challenge 4: Count Occurrences using .reduce()
+
+## 👉 Task: Count how many times each word appears in the given array.
+
+```javascript
+const words = ["apple", "banana", "apple", "orange", "banana", "apple"];
+
+// Your Code Here
+
+console.log(wordCount);
+```
+
+### 🔥 Challenge 5: Find the First Repeated Character in a String
+
+## 👉 Task: Find the first character that appears more than once in a string.
+
+```javascript
+function firstRepeatedChar(str) {
+  // Your Code Here
+}
+
+console.log(firstRepeatedChar("abcdefa")); // Expected Output: "a"
+console.log(firstRepeatedChar("hello")); // Expected Output: "l"
+console.log(firstRepeatedChar("world")); // Expected Output: null
+```
+
+### Answer is in the folder of Day 3.
+
+#### Todays Conclusion
+
+In this series of exercises, we have learned how to manipulate objects and arrays in JavaScript, use array methods (map, filter, reduce), and work with deeply nested data structures. We also explored how to manipulate both simple and complex data types effectively in JavaScript.
