@@ -146,7 +146,7 @@ for (let i = 0; i < fruits.length; i++) {
 - 3️⃣ Write a function that takes a name and age, and prints a greeting like: "Hello, Dip! You are 21 years old.
 - 4️⃣ Write an arrow function that multiplies three numbers.
 
-#### Day 3 -> Array And Objects
+#### Day 3 (Part 1) -> Array And Objects
 
 # Array (map, filter and reduce)
 
@@ -333,3 +333,206 @@ console.log(firstRepeatedChar("world")); // Expected Output: null
 #### Todays Conclusion
 
 In this series of exercises, we have learned how to manipulate objects and arrays in JavaScript, use array methods (map, filter, reduce), and work with deeply nested data structures. We also explored how to manipulate both simple and complex data types effectively in JavaScript.
+
+#### Day 3 (Part 2)
+
+### JavaScript Scope, Closures & Destructuring
+
+## 1️⃣ Scope
+Scope determines where variables are accessible in your code. There are three main types:
+
+### **Types of Scope**
+
+#### **1. Global Scope**
+Variables declared outside any function are accessible anywhere.
+```js
+let globalVar = "I am global";
+
+function showGlobal() {
+  console.log(globalVar); // ✅ Accessible
+}
+
+showGlobal();
+console.log(globalVar); // ✅ Accessible
+```
+
+#### **2. Function (Local) Scope**
+Variables declared inside a function are only accessible within that function.
+```js
+function localScope() {
+  let localVar = "I exist only here";
+  console.log(localVar); // ✅ Accessible inside function
+}
+
+localScope();
+console.log(localVar); // ❌ Error: localVar is not defined
+```
+
+#### **3. Block Scope (`let` & `const`)**
+Variables inside `{}` using `let` or `const` exist only within that block.
+```js
+if (true) {
+  let blockVar = "I exist only inside this block";
+  console.log(blockVar); // ✅ Accessible
+}
+
+console.log(blockVar); // ❌ Error: blockVar is not defined
+```
+
+### **Scope Chain**
+If a variable is not found in the current scope, JavaScript looks up parent scopes.
+```js
+let a = "Global";
+
+function outer() {
+  let b = "Outer";
+  
+  function inner() {
+    let c = "Inner";
+    console.log(a, b, c); // ✅ Accessible
+  }
+  
+  inner();
+  console.log(a, b); // ✅ Accessible
+}
+
+outer();
+console.log(a); // ✅ Accessible
+```
+
+---
+
+## 2️⃣ Closures
+A **closure** is a function that **remembers** the variables from its parent scope even after the parent function has finished executing.
+
+### **Example 1: Counter Function**
+```js
+function createCounter() {
+  let count = 0;
+
+  return function() {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = createCounter();
+
+counter(); // 1
+counter(); // 2
+counter(); // 3
+```
+
+### **Example 2: Private Variables with Closures**
+Closures can be used to create private variables.
+```js
+function bankAccount() {
+  let balance = 0;
+
+  return {
+    deposit(amount) {
+      balance += amount;
+      console.log(`Deposited: $${amount}`);
+    },
+    getBalance() {
+      return balance;
+    }
+  };
+}
+
+const account = bankAccount();
+account.deposit(100);
+console.log(account.getBalance()); // 100
+account.deposit(50);
+console.log(account.getBalance()); // 150
+```
+
+---
+
+## 3️⃣ Destructuring
+Destructuring allows you to **extract values from arrays and objects** and store them in variables.
+
+### **Array Destructuring**
+```js
+const numbers = [1, 2, 3];
+const [a, b, c] = numbers;
+console.log(a, b, c); // 1 2 3
+```
+
+#### **Skipping Elements**
+```js
+const [, second, , fourth] = [10, 20, 30, 40];
+console.log(second, fourth); // 20 40
+```
+
+#### **Rest Operator**
+```js
+const [first, ...rest] = [100, 200, 300, 400];
+console.log(first); // 100
+console.log(rest);  // [200, 300, 400]
+```
+
+#### **Swapping Variables**
+```js
+let x = 5, y = 10;
+[x, y] = [y, x];
+console.log(x, y); // 10 5
+```
+
+### **Object Destructuring**
+```js
+const person = { name: "John", age: 30 };
+const { name, age } = person;
+console.log(name, age); // John 30
+```
+
+#### **Renaming Variables**
+```js
+const { name: firstName, age: personAge } = person;
+console.log(firstName, personAge); // John 30
+```
+
+#### **Default Values**
+```js
+const user = { name: "Alice" };
+const { name, age = 25 } = user;
+console.log(age); // 25 (default value)
+```
+
+#### **Rest Operator in Objects**
+```js
+const car = { brand: "Tesla", model: "Model 3", year: 2022 };
+const { brand, ...otherDetails } = car;
+console.log(brand); // Tesla
+console.log(otherDetails); // { model: "Model 3", year: 2022 }
+```
+
+#### **Nested Object Destructuring**
+```js
+const user = {
+  name: "Michael",
+  address: { city: "Berlin", zip: "10115" }
+};
+const { address: { city } } = user;
+console.log(city); // Berlin
+```
+
+#### **Function Parameter Destructuring**
+```js
+function greet({ name, age }) {
+  console.log(`Hello, ${name}. You are ${age} years old.`);
+}
+greet({ name: "Sam", age: 28 });
+```
+
+---
+
+## 🔥 Key Takeaways
+✅ **Scope** defines where variables can be accessed (Global, Local, Block Scope).  
+✅ **Closures** allow functions to "remember" their surrounding scope even after execution.  
+✅ **Destructuring** makes it easier to extract values from arrays and objects into variables.  
+
+---
+
+## Note there is a bit more explanation to each topic in each files.
+
